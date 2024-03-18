@@ -1,8 +1,8 @@
 export const InvoiceApp = () => {
-    return{
+    return(
         <>
-        <h1>Ejemplo Factura</h1>        
+         <h1>Ejemplo Factura</h1>        
         </>     
         
-    }
+    )
 }
