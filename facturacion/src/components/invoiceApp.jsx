@@ -25,6 +25,7 @@ export const InvoiceApp = () => {
 
          </ul>
 
+
          <h3>Datos de la Empresa</h3>
          <ul>
             <li>{company.name}</li>
