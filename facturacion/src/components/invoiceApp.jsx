@@ -1,5 +1,6 @@
 
 import { getInvoice } from "../services/getInvoice"
+import { InvoiceView } from "./invoiceView";
 
 export const InvoiceApp = () => {
 
@@ -20,14 +21,7 @@ export const InvoiceApp = () => {
                </div>
 
                <div className="card-body">
-
-
-
-                  <ul className="list-group">
-                     <li className="list-group-item" >Id: {id}</li>
-                     <li className="list-group-item" >Name: {name}</li>
-
-                  </ul>
+                     <InvoiceView></InvoiceView>
 
                   <div className="row my-3">
                      <div className="col">
