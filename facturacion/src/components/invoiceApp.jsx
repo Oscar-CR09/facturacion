@@ -1,13 +1,12 @@
 
 import { getInvoice } from "../services/getInvoice"
+import { clientView } from "./ClientView";
 import { InvoiceView } from "./invoiceView";
 
 export const InvoiceApp = () => {
 
    const { id, name, client, company, items } = getInvoice();
 
-   const { name: nameCliente, lastName, address } = client;
-   const { country, city, street, number } = address;
    return (
       <>
 
@@ -21,18 +20,12 @@ export const InvoiceApp = () => {
                </div>
 
                <div className="card-body">
-                     <InvoiceView></InvoiceView>
+                  <InvoiceView id={id} name={name}></InvoiceView>
 
                   <div className="row my-3">
                      <div className="col">
+                        <clientView client={client} > <clientView />
 
-                        <h3>Datos del Cliente</h3>
-                        <ul className="list-group">
-                           <li className="list-group-item active">{nameCliente} {lastName}</li>
-                           <li className="list-group-item">{country} / {city}</li>
-                           <li className="list-group-item">{street} {number}</li>
-
-                        </ul>
                      </div>
 
                      <div className="col">

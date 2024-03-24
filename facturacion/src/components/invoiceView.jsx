@@ -1,4 +1,4 @@
-export const InvoiceView = ({id, name}) => {
+export const invoiceView = (id, name) => {
     return (
 
         <>
