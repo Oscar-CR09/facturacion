@@ -1,8 +1,8 @@
 
 import { getInvoice } from "../services/getInvoice"
-import { clientView } from "./ClientView";
+import { ClientView } from "./ClientView";
 import { CompanyView } from "./CompanyView";
-import { InvoiceView } from "./invoiceView";
+import { InvoiceView } from "./InvoiceView";
 
 export const InvoiceApp = () => {
 
@@ -24,13 +24,15 @@ export const InvoiceApp = () => {
                   <InvoiceView id={id} name={name}></InvoiceView>
 
                   <div className="row my-3">
+                     
                      <div className="col">
-                        <clientView client={client} > <clientView />
+
+                        <ClientView title="Datos del Cliente" client={client} > </ClientView >
 
                      </div>
 
                      <div className="col">
-                        <CompanyView company={company} ></CompanyView>
+                        <CompanyView title="Datos de la Empresa" company={company} ></CompanyView>
                      </div>
                   </div>
 
