@@ -1,5 +1,5 @@
 
-export const RowItemView = ({ product, price, quantity}) => {
+export const RowItemView = ( {product, price, quantity}) => {
 
     return (
         <>
