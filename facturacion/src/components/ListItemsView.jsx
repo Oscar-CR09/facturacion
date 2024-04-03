@@ -20,6 +20,8 @@ export const ListItemsView = ({title, items}) => {
                     ))}
                 </tbody>
             </table>
+
+            
         </>
     )
 }
