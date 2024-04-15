@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { getInvoice } from "./services/getInvoice"
 import { ClientView } from "./components/ClientView";
 import { CompanyView } from "./components/CompanyView";
@@ -5,9 +6,14 @@ import { InvoiceView } from "./components/InvoiceView";
 import { ListItemsView } from "./components/ListItemsView";
 import { TotalView } from "./components/TotalView";
 
+
 export const InvoiceApp = () => {
 
     const { total , id, name, client, company, items } = getInvoice();
+    const [productValue, setProductValue] = useState('');
+    const [priceValue, setPriceValue] = useState(0);
+    const [QualityValue, setQualiyValue] = useState(0);
+    
 
     return (
         <>
