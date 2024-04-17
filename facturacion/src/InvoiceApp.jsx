@@ -14,6 +14,7 @@ export const InvoiceApp = () => {
     const [priceValue, setPriceValue] = useState(0);
     const [QualityValue, setQualiyValue] = useState(0);
     
+    const [items,setItems] = useState(itemsInicial);
 
     return (
         <>
@@ -45,15 +46,19 @@ export const InvoiceApp = () => {
 
                             <input type="text" name="product" placeholder="Producto" className="form-control m-3" 
                             onChange={event => {
-                                console.log(event.target.value)
+                                console.log(event.target.value);
+                                setProductValue(event.target.value);
                             }}/>
                             <input type="text" name="price" placeholder="Precio" className="form-control m-3" 
                             onChange={event => {
-                                console.log(event.target.value)
+                                console.log(event.target.value);
+                                setPriceValue(event.target.value);
                             }}/>
                             <input type="text" name="quantity" placeholder="Cantidad" className="form-control m-3" 
                             onChange={event => {
-                                console.log(event.target.value)
+                                console.log(event.target.value);
+                                setQualiyValue(event.target.value);
+
                             }}/>
 
                         </form>
