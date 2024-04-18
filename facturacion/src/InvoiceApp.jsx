@@ -9,7 +9,7 @@ import { TotalView } from "./components/TotalView";
 
 export const InvoiceApp = () => {
 
-    const { total , id, name, client, company, items } = getInvoice();
+    const { total , id, name, client, company, items:itemsInicial } = getInvoice();
     const [productValue, setProductValue] = useState('');
     const [priceValue, setPriceValue] = useState(0);
     const [QualityValue, setQualiyValue] = useState(0);
@@ -42,7 +42,10 @@ export const InvoiceApp = () => {
 
                         <ListItemsView title="Productos de la factura" items={items} />
                         <TotalView total = { total } />
-                        <form >
+                        <form className="w-50" onSubmit={event => {
+                            event.preventDefault();
+                            setItems([...items, { key:4, product: productValue, price:priceValue,quantity: QualityValue}])
+                        }}>
 
                             <input type="text" name="product" placeholder="Producto" className="form-control m-3" 
                             onChange={event => {
@@ -61,6 +64,7 @@ export const InvoiceApp = () => {
 
                             }}/>
 
+                            <button type="submit" className="btn-primary"> Crear Items</button>
                         </form>
                     </div>
                     
