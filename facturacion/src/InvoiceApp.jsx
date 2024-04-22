@@ -44,20 +44,47 @@ export const InvoiceApp = () => {
                         <TotalView total = { total } />
                         <form className="w-50" onSubmit={event => {
                             event.preventDefault();
-                            setItems([...items, { key:4, product: productValue, price:priceValue,quantity: QualityValue}])
+
+                            setItems([...items, { 
+                                id:4, 
+                                product: productValue,
+                                 price:+priceValue,
+                                 quantity:parseInt(QualityValue,10) 
+                            }]);
+                            
+                            setProductValue('');
+                            setPriceValue(0);
+                            setQualiyValue(0);
+
                         }}>
 
-                            <input type="text" name="product" placeholder="Producto" className="form-control m-3" 
+                            <input 
+                            type="text" 
+                            name="product" 
+                            value={productValue}
+                            placeholder="Producto" 
+                            className="form-control m-3" 
                             onChange={event => {
                                 console.log(event.target.value);
                                 setProductValue(event.target.value);
                             }}/>
-                            <input type="text" name="price" placeholder="Precio" className="form-control m-3" 
+                            <input 
+                            type="text" 
+                            name="price" 
+                            value={priceValue}
+                            placeholder="Precio" 
+                            className="form-control m-3" 
+
                             onChange={event => {
                                 console.log(event.target.value);
                                 setPriceValue(event.target.value);
                             }}/>
-                            <input type="text" name="quantity" placeholder="Cantidad" className="form-control m-3" 
+                            <input
+                             type="text" 
+                             name="quantity" 
+                            value={QualityValue}
+                             placeholder="Cantidad" 
+                             className="form-control m-3" 
                             onChange={event => {
                                 console.log(event.target.value);
                                 setQualiyValue(event.target.value);
