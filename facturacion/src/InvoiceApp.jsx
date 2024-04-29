@@ -51,6 +51,7 @@ export const InvoiceApp = () => {
                                  price:+priceValue,
                                  quantity:parseInt(QualityValue,10) 
                             }]);
+
                             
                             setProductValue('');
                             setPriceValue(0);
@@ -82,7 +83,7 @@ export const InvoiceApp = () => {
                             <input
                              type="text" 
                              name="quantity" 
-                            value={QualityValue}
+                             value={QualityValue}
                              placeholder="Cantidad" 
                              className="form-control m-3" 
                             onChange={event => {
